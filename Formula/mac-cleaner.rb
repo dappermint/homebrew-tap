@@ -1,8 +1,8 @@
 class MacCleaner < Formula
   desc "Whole-surface macOS storage accounting and cleanup TUI"
   homepage "https://github.com/dappermint/mac-cleaner"
-  url "https://github.com/dappermint/mac-cleaner/archive/refs/tags/v0.89.1.tar.gz"
-  sha256 "4ef10890d7e6f10f54052c80ff02de86760f93576ee688e3697f7b4932b93dee"
+  url "https://github.com/dappermint/mac-cleaner/archive/refs/tags/v0.89.2.tar.gz"
+  sha256 "80d93626361ac9d967ae60456798cc67d4921e1daefbc91a727a55204ceca013"
   license "GPL-3.0-only"
   head "https://github.com/dappermint/mac-cleaner.git", branch: "main"
 
