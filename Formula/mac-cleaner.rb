@@ -1,8 +1,8 @@
 class MacCleaner < Formula
   desc "Whole-surface macOS storage accounting and cleanup TUI"
   homepage "https://github.com/dappermint/mac-cleaner"
-  url "https://github.com/dappermint/mac-cleaner/archive/refs/tags/v0.88.0.tar.gz"
-  sha256 "c41b193fb6981fa608bed7029e849984f1902dae9c1685e916590e0b51a99fbf"
+  url "https://github.com/dappermint/mac-cleaner/archive/refs/tags/v0.89.0.tar.gz"
+  sha256 "ef91a39cfc0061f5a2962676949fd2ab14cc5f7b8854cbf4e5c3327a8d44061a"
   license "GPL-3.0-only"
   head "https://github.com/dappermint/mac-cleaner.git", branch: "main"
 
@@ -10,8 +10,7 @@ class MacCleaner < Formula
   depends_on :macos
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/mac-cleaner"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/mac-cleaner"
     doc.install "README.md"
   end
 
