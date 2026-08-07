@@ -19,7 +19,7 @@ cask "whisky-preview" do
   # No in-app updater: the Sparkle feed was removed along with the fork's tie to
   # upstream's signing key, so brew owns upgrades.
   auto_updates false
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
   depends_on arch: :arm64
 
   app "Whisky Preview.app"
