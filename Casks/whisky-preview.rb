@@ -19,13 +19,13 @@ cask "whisky-preview" do
   # No in-app updater: the Sparkle feed was removed along with the fork's tie to
   # upstream's signing key, so brew owns upgrades.
   auto_updates false
-  depends_on macos: :sequoia
+  depends_on macos: :tahoe
   depends_on arch: :arm64
 
   app "Whisky Preview.app"
 
   postflight do
-    # Ad-hoc signed and not notarized, so a quarantined copy is refused outright
+    # Self-signed and not notarized, so a quarantined copy is refused outright
     # and macOS offers no way to approve it. Homebrew's --no-quarantine would do
     # the same, but silently failing to launch for anyone who forgets the flag is
     # worse than clearing it here.

@@ -35,6 +35,6 @@ edited by hand.
 | --- | --- |
 | [whisky-preview](https://github.com/dappermint/Whisky) | Development fork of Whisky, a Wine wrapper for running Windows apps |
 
-Whisky Preview is ad-hoc signed and not notarized, so the cask clears the
-quarantine flag on install. It uses its own bundle identifier and installs as
+Whisky Preview is self-signed and not notarized, so the cask clears the
+quarantine flag on install. It requires macOS 26 (Tahoe) or later. It uses its own bundle identifier and installs as
 `Whisky Preview.app`, so it sits beside a normal Whisky rather than replacing it.
