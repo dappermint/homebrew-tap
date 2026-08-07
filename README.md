@@ -5,14 +5,18 @@ Homebrew formulae and casks for [dappermint](https://github.com/dappermint)'s to
 ```sh
 brew tap dappermint/tap
 brew install mac-cleaner
+
+brew trust --cask dappermint/tap/whisky-preview
 brew install --cask whisky-preview
 ```
+
+Casks need `brew trust` first: Homebrew refuses to load one from a third-party
+tap until you trust it, because a cask can run code on install.
 
 Or in one step, without tapping first:
 
 ```sh
 brew install dappermint/tap/mac-cleaner
-brew install --cask dappermint/tap/whisky-preview
 ```
 
 ## formulae
