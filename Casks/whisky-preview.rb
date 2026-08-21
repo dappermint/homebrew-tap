@@ -1,6 +1,6 @@
 cask "whisky-preview" do
-  version "2026.8.20"
-  sha256 "811ebf836f8e0ba3d649e54599a51a73811812ef2efe1e3d0f06295b270950d1"
+  version "2026.8.21"
+  sha256 "03f7ca3f6b62532c1c0e208d431fd711df15d9999d8759d1f940279bd5ea8035"
 
   url "https://github.com/dappermint/Whisky/releases/download/app-v#{version}/Whisky-Preview-#{version}.dmg",
       verified: "github.com/dappermint/Whisky/"
