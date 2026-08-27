@@ -1,8 +1,8 @@
 class Occam < Formula
   desc "Control a Razer BlackShark V3 Pro from macOS, without Synapse"
   homepage "https://github.com/dappermint/occam"
-  url "https://github.com/dappermint/occam/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "7072d8c23214eb1b3928a31d10223a86ea50eed5b5f51b798a7b713b8d760f43"
+  url "https://github.com/dappermint/occam/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "88bbe3364dbbfc23488536ac3a285f7f1b1bb2a1b1344bdd6d6bdf8beabc9546"
   license "MIT"
   head "https://github.com/dappermint/occam.git", branch: "main"
 
@@ -25,7 +25,9 @@ class Occam < Formula
     # output is pinned so the binary name never follows the formula name.
     system "go", "build", *std_go_args(output:  bin/"occam",
                                        ldflags: "-X github.com/dappermint/occam/cmd.version=#{version}")
-    system "go", "build", *std_go_args(output: bin/"occam-spatial"), "./cmd/occam-spatial"
+    system "go", "build", *std_go_args(output:  bin/"occam-spatial",
+                                       ldflags: "-X main.version=#{version}"),
+           "./cmd/occam-spatial"
 
     cd "occmixer" do
       system "cargo", "install", *std_cargo_args
