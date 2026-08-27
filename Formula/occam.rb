@@ -1,8 +1,8 @@
 class Occam < Formula
   desc "Control a Razer BlackShark V3 Pro from macOS, without Synapse"
   homepage "https://github.com/dappermint/occam"
-  url "https://github.com/dappermint/occam/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "b689c71899916162ae31220a89c0da1125eaf67dd62aed1f3738556961fe5a3a"
+  url "https://github.com/dappermint/occam/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "beef912d292c2c14977fae2b34075e68acd3d5693468313192443245d24909b0"
   license "MIT"
   head "https://github.com/dappermint/occam.git", branch: "main"
 
