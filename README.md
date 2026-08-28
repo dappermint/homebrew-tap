@@ -33,10 +33,10 @@ edited by hand.
 
 | cask | what it is |
 | --- | --- |
-| [fastpotify](https://github.com/crmne/fastpotify) | Native Spotify client and Spotify Connect receiver |
+| [snoop](https://github.com/dappermint/snoop) | Mac-first Spotify client and Spotify Connect receiver |
 | [whisky-preview](https://github.com/dappermint/Whisky) | Development fork of Whisky, a Wine wrapper for running Windows apps |
 
-Fastpotify is ad-hoc signed and not notarized upstream, so the cask clears
+Snoop is ad-hoc signed and not notarized, so the cask clears
 the quarantine flag on install.
 
 Whisky Preview is self-signed and not notarized, so the cask clears the
