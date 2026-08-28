@@ -1,6 +1,6 @@
 cask "snoop" do
   version "0.1.3"
-  sha256 :no_check
+  sha256 "cf594d5635a0529560a67141599aacc7b2e91658c18020ac66761d54d043785c"
 
   url "https://github.com/dappermint/snoop/releases/download/v#{version}/snoop-v#{version}-macos-universal.dmg",
       verified: "github.com/dappermint/snoop/"
