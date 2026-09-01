@@ -1,8 +1,8 @@
 class Occam < Formula
   desc "Control a Razer BlackShark V3 Pro from macOS, without Synapse"
   homepage "https://github.com/dappermint/occam"
-  url "https://github.com/dappermint/occam/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "1b15476eab0025e0c28c27a5a6640fab4e714501ca190f9c33ee720928264621"
+  url "https://github.com/dappermint/occam/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "19dd4a33f01a1276efa3a20b6643aaef3b65291a8367cb690de4bcecc63e896f"
   license "MIT"
   head "https://github.com/dappermint/occam.git", branch: "main"
 
@@ -30,6 +30,21 @@ class Occam < Formula
     end
 
     doc.install "README.md"
+  end
+
+  # `brew cleanup` deletes the previous Cellar directory on every upgrade, and
+  # launchd pins a bootstrapped job to the inode it resolved rather than to the
+  # opt symlink the plist names. The job then dies at launch with
+  # OS_REASON_CODESIGNING, not ENOENT, since the replacement binary fails the
+  # launch constraint check. Re-bootstrapping is the only fix, and `repair` is
+  # a no-op when no agent was ever installed.
+  #
+  # Never fatal: post_install is sandboxed, so launchctl can be denied here.
+  # A stale agent is worth a warning, not a failed upgrade.
+  def post_install
+    system bin/"occam", "agent", "repair"
+  rescue => e
+    opoo "could not reload the occam agent (#{e.message}); run `occam agent repair`"
   end
 
   # Runs the menu bar app, which also re-applies the saved profile whenever the
