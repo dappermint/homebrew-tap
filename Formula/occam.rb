@@ -1,8 +1,8 @@
 class Occam < Formula
   desc "Control a Razer BlackShark V3 Pro from macOS, without Synapse"
   homepage "https://github.com/dappermint/occam"
-  url "https://github.com/dappermint/occam/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "9b76953f8216e0c53f4e53b84abf6085307048d63c572b161de70a23dce90e8e"
+  url "https://github.com/dappermint/occam/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "8a93a3bcc1169d506e305e2209a82de698a40854431d96bcedf0bbf05ba7bb3c"
   license "MIT"
   head "https://github.com/dappermint/occam.git", branch: "main"
 
@@ -17,7 +17,8 @@ class Occam < Formula
     # The macOS 26+ appearance, Liquid Glass included, is gated on the SDK a
     # binary links against rather than on anything the code does, so build
     # against the newest one present instead of whatever is on the path.
-    if (sdk = MacOS.sdk_path_if_needed || MacOS.sdk&.path)
+    sdk = MacOS.sdk_path
+    if sdk.present?
       ENV["CGO_CFLAGS"] = "-isysroot #{sdk} -mmacosx-version-min=14.0"
       ENV["CGO_LDFLAGS"] = "-isysroot #{sdk} -mmacosx-version-min=14.0"
     end
