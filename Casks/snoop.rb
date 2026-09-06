@@ -2,8 +2,7 @@ cask "snoop" do
   version "0.3.0"
   sha256 "add0c8994e648c262ff3aae9d2f765e34b9a255879f36b290767189680cd0654"
 
-  url "https://github.com/dappermint/snoop/releases/download/v#{version}/snoop-v#{version}-macos-universal.dmg",
-      verified: "github.com/dappermint/snoop/"
+  url "https://github.com/dappermint/snoop/releases/download/v#{version}/snoop-v#{version}-macos-universal.dmg"
   name "Snoop"
   desc "Spotify client and Spotify Connect receiver"
   homepage "https://github.com/dappermint/snoop"
@@ -17,10 +16,9 @@ cask "snoop" do
 
   app "Snoop.app"
 
-  postflight do
+  postflight_steps do
     # Ad-hoc signed and not notarized, so clear quarantine to avoid Gatekeeper blocking launch.
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Snoop.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Snoop.app"]
   end
 
   uninstall quit: "com.dappermint.snoop"

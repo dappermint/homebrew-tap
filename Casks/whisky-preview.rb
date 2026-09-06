@@ -2,8 +2,7 @@ cask "whisky-preview" do
   version "2026.8.46"
   sha256 "4aa1a58ecc18e93bd96ef66727b5ebb84d30c874741b05d2712cdb0ea6f0f7d8"
 
-  url "https://github.com/dappermint/Whisky/releases/download/app-v#{version}/Whisky-Preview-#{version}.dmg",
-      verified: "github.com/dappermint/Whisky/"
+  url "https://github.com/dappermint/Whisky/releases/download/app-v#{version}/Whisky-Preview-#{version}.dmg"
   name "Whisky Preview"
   desc "Development fork of Whisky, a Wine wrapper for running Windows apps"
   homepage "https://github.com/dappermint/Whisky"
@@ -24,13 +23,12 @@ cask "whisky-preview" do
 
   app "Whisky Preview.app"
 
-  postflight do
+  postflight_steps do
     # Self-signed and not notarized, so a quarantined copy is refused outright
     # and macOS offers no way to approve it. Homebrew's --no-quarantine would do
     # the same, but silently failing to launch for anyone who forgets the flag is
     # worse than clearing it here.
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Whisky Preview.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Whisky Preview.app"]
   end
 
   uninstall quit: "com.dappermint.WhiskyPreview"
