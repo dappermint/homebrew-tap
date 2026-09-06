@@ -33,8 +33,13 @@ edited by hand.
 
 | cask | what it is |
 | --- | --- |
+| [sideloadly](https://sideloadly.io) | Sideload iOS apps onto iPhone, iPad and Apple Silicon Macs |
 | [snoop](https://github.com/dappermint/snoop) | Mac-first Spotify client and Spotify Connect receiver |
 | [whisky-preview](https://github.com/dappermint/Whisky) | Development fork of Whisky, a Wine wrapper for running Windows apps |
+
+Sideloadly is an unsigned x86_64 build served from an unversioned url, so the
+cask clears the quarantine flag on install, needs Rosetta 2, and skips the
+checksum. Upgrades come from the version string on the homepage.
 
 Snoop is ad-hoc signed and not notarized, so the cask clears
 the quarantine flag on install.
