@@ -1,6 +1,6 @@
 cask "shyfoss" do
-  version "0.3.0"
-  sha256 "0211ca3ef4fb196dbe42ef59d8cd6271eb3d0ce7f8e510a9b39f60b7b3765d90"
+  version "0.3.1"
+  sha256 "7d99526c39b71f0ee5dbe41fc327236c7c45fc07bd8cc878207b8a145b3cbb12"
 
   url "https://github.com/dappermint/shyfoss/releases/download/v#{version}/ShyFoss-v#{version}.zip"
   name "ShyFoss"
