@@ -33,6 +33,7 @@ edited by hand.
 
 | cask | what it is |
 | --- | --- |
+| [pixeldish](https://github.com/dappermint/pixeldish) | Dithered procedural wallpapers in the menu bar |
 | [sideloadly](https://sideloadly.io) | Sideload iOS apps onto iPhone, iPad and Apple Silicon Macs |
 | [snoop](https://github.com/dappermint/snoop) | Mac-first Spotify client and Spotify Connect receiver |
 | [whisky-preview](https://github.com/dappermint/Whisky) | Development fork of Whisky, a Wine wrapper for running Windows apps |
