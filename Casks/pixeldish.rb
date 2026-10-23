@@ -1,6 +1,6 @@
 cask "pixeldish" do
-  version "0.4.0"
-  sha256 "c1dd309895eea4a0fce8736d0b3ad0235d558f00900d2b66eddb32d1e5afa303"
+  version "0.5.0"
+  sha256 "546bcb45c6184f6b1704accca24519f495bb29c131a96ebfc787e139529e8e27"
 
   url "https://github.com/dappermint/pixeldish/releases/download/v#{version}/Pixeldish-#{version}.dmg"
   name "Pixeldish"
@@ -23,6 +23,7 @@ cask "pixeldish" do
   uninstall quit: "lgbt.dappy.pixeldish"
 
   zap trash: [
+    "~/.config/pixeldish",
     "~/Library/Application Support/Pixeldish",
     "~/Library/Preferences/lgbt.dappy.pixeldish.plist",
     "~/Library/Screen Savers/Pixeldish.saver",
