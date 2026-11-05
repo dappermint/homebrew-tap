@@ -1,6 +1,6 @@
 cask "fluxer@canary" do
-  version "2026.821.153243"
-  sha256 "16b4d61435ea30ba0969b1544bdcab6c1407971e02aa1be11b1543d9e4850e47"
+  version "2026.1105.25346"
+  sha256 "ab284fa69c268dbd04a6cc73d1023e8db16e988eab1fc140ff3451b9deb1142a"
 
   # The arm64 and x64 paths both hand back the same universal dmg.
   url "https://api.fluxer.app/dl/desktop/canary/darwin/arm64/#{version}/dmg"
@@ -10,7 +10,7 @@ cask "fluxer@canary" do
 
   livecheck do
     url "https://api.fluxer.app/dl/desktop/canary/darwin/arm64/latest/dmg"
-    regex(/Fluxer(?:%20|\s)Canary[._-]v?(\d+(?:\.\d+)+)-mac/i)
+    regex(/Fluxer(?:%20|[\s_-])Canary[._-]v?(\d+(?:\.\d+)+)-mac/i)
     strategy :header_match
   end
 
