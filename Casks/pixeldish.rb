@@ -1,6 +1,6 @@
 cask "pixeldish" do
-  version "0.9.1"
-  sha256 "5fecb081665a9dd3b9e6b0dd624e12a89982b879a4578f773b6e0fc29f36ae3e"
+  version "0.9.5"
+  sha256 "0df88f8b31fc4d802d6c2d61a8296e344e011993c2c5bd474e6626085de1f45d"
 
   url "https://github.com/dappermint/pixeldish/releases/download/v#{version}/Pixeldish-#{version}.dmg"
   name "Pixeldish"
